@@ -10,4 +10,3 @@ package-lock.json
 .vscode
 .cache
 .env
-.env.simple
