@@ -60,7 +60,7 @@ default_port="8080"):
     help=optparse.SUPPRESS_HELP,
     )
     options, _ = parser.parse_args()
-    # options.debug = app.debug
+ 
     # If the user selects the profiling option, then we need
     # to do a little extra setup
     if options.profile:
