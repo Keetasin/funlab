@@ -1,0 +1,68 @@
+    {#{% extends "/base/base-layout.html" %}
+
+    {% block title %}ลงทะเบียน
+    {% endblock %}
+
+    {% block body %}
+    ลงทะเบียน
+    <form class="ui form" method="post">
+        {{ form.csrf_token }}
+        {{ form.email }}
+        {{ form.username }}
+        {{ form.input_password }}
+        {{ form.confirm_password }}
+        <button type="submit">ยืนยัน</button>
+    </form>
+    {% endblock %}#}
+
+    {% extends "/base/base-layout.html" %}
+
+    {% block title %}ลงทะเบียน{% endblock %}
+    
+    {% block body %}
+    <div class="ui container">
+      <div class="eight wide column" style="padding: 20%;">
+        <div class="column">
+          <h2 class="ui violet image header">
+            <i class="ui icon user plus"></i>
+            <div class="content">ลงทะเบียน</div>
+          </h2>
+          <form class="ui large form" method="post">
+            {{ form.csrf_token }}
+            <div class="ui stacked segment">
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="envelope icon"></i>
+                  <input id="email" name="email" required placeholder="Email">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="user icon"></i>
+                  <input id="username" name="username" required placeholder="Username">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="lock icon"></i>
+                  <input id="password" name="input_password" type="password" required placeholder="Password">
+                </div>
+              </div>
+              <div class="field">
+                <div class="ui left icon input">
+                  <i class="lock icon"></i>
+                  <input id="confirm_password" name="confirm_password" type="password" required placeholder="Confirm Password">
+                </div>
+              </div>
+              <button class="ui fluid large violet submit button" type="submit">ยืนยัน</button>
+            </div>
+          </form>
+          <div class="ui message" style="text-align: center;">
+            Already have an account? 
+            <a href="{{ url_for('accounts.login') }}">Log In</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    
