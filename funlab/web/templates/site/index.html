@@ -1,5 +1,9 @@
 {% extends "/base/default-page.html" %}
 
-
 {% block content %}
-{% endblock content%}
+<div class="ui center aligned container">
+    <div class="ui link list">
+        <a href="{{ url_for('profile.index') }}" >{{ username }}</a>
+    </div>
+</div>
+{% endblock content %}

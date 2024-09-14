@@ -1,0 +1,37 @@
+{% extends "/base/base-layout.html" %}  
+{% include "/base/toolbar.html" %}
+
+
+{% block title %}
+    Profile Page
+{% endblock %}
+
+{% block body %}
+    <style>
+        .circle-image {
+            border-radius: 50%; 
+            overflow: hidden; 
+        }    
+    </style>
+    <div style="padding-top:200px;"></div>
+    <div class="container">
+        <div class="ui center aligned container ">
+            <h1>Profile</h1>
+            <div class="profile-info">
+                <div class="ui small image">
+                    <svg width="150" height="150"  class="circle-image">
+                    <image xlink:href="../static/images/profile.png" x="0" y="0" width="100%" height="100%"></image>
+                    </svg>
+                </div>
+                <h2>Username: {{username}}</h2>
+                <p>Email: {{email}}</p>
+                <p>Member since: {{created_date}}</p>
+                <a href="/edit-profile" class="btn btn-primary" >Edit Profile</a>
+            </div>
+        </div>
+    </div>    
+    <div style="padding-top:200px;"></div>
+    <footer class="ui vertical footer segment" style="padding-top: 2em;">
+        {% include "/base/footer.html" %}
+    </footer>
+{% endblock %}
